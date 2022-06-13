@@ -10,15 +10,25 @@ namespace RegexProblems
 {
     internal class RegExpression
     {
-        const string NAME = "^[A-Z]{1}[a-z]{2,}$";
-        public void RegexNameChecker(string firstName)
+        const string FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$";
+        const string LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
+        public void RegexFirstNameChecker(string firstName)
         {
-            if (Regex.IsMatch(firstName, NAME))
+            if (Regex.IsMatch(firstName, FIRSTNAME))
             {
                 Console.WriteLine("First name is valid.");
                 return;
             }
             Console.WriteLine("First name is not valid.");
+        }
+        public void RegexLastNameChecker(string secondName)
+        {
+            if (Regex.IsMatch(secondName, LASTNAME))
+            {
+                Console.WriteLine("second name is valid.");
+                return;
+            }
+            Console.WriteLine("second name is not valid.");
         }
 
     }
