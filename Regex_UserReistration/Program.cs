@@ -17,10 +17,13 @@ namespace RegexProblems
             string email = Console.ReadLine();
             Console.Write("CONTACT:");
             string mobileNumber = Console.ReadLine();
+            Console.Write("PASSWORD:");
+            string password = Console.ReadLine();
             regex.RegexFirstNameChecker(firstName);
             regex.RegexLastNameChecker(lastName);
             regex.RegexEmail(email);
             regex.RegexMobileNumber(mobileNumber);
+            regex.RegexPassword(password);
         }
     }
 }
