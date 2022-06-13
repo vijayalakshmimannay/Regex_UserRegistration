@@ -15,9 +15,12 @@ namespace RegexProblems
             string lastName = Console.ReadLine();
             Console.Write("EMAIL:");
             string email = Console.ReadLine();
+            Console.Write("CONTACT:");
+            string mobileNumber = Console.ReadLine();
             regex.RegexFirstNameChecker(firstName);
             regex.RegexLastNameChecker(lastName);
             regex.RegexEmail(email);
+            regex.RegexMobileNumber(mobileNumber);
         }
     }
 }
