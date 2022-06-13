@@ -15,6 +15,7 @@ namespace RegexProblems
         const string EMAIL = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9}$";
         const string PASSWORD = "^[a-z A-Z 0-9]{1,}[A-Z]{1,}[a-z A-Z 0-9]{1,}[!*@#$%^&+=]?[a-z A-Z 0-9]{1,}[0-9]{1,}[a-z A-Z 0-9]{1,}$";
+        const string SAMPLE = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
         public void RegexFirstNameChecker(string firstName)
         {
             if (Regex.IsMatch(firstName, FIRSTNAME))
@@ -59,6 +60,14 @@ namespace RegexProblems
                 return;
             }
             Console.WriteLine("Password is not valid.");
+        }
+        public string RegexSampleMail(string sample)
+        {
+            if (Regex.IsMatch(sample, SAMPLE))
+            {
+                return "Valid";
+            }
+            return "Not Valid";
         }
     }
 }
