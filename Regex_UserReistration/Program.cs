@@ -13,8 +13,11 @@ namespace RegexProblems
             string firstName = Console.ReadLine();
             Console.Write("Last Name:");
             string lastName = Console.ReadLine();
+            Console.Write("EMAIL:");
+            string email = Console.ReadLine();
             regex.RegexFirstNameChecker(firstName);
             regex.RegexLastNameChecker(lastName);
+            regex.RegexEmail(email);
         }
     }
 }
