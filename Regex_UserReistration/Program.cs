@@ -19,11 +19,11 @@ namespace RegexProblems
             string mobileNumber = Console.ReadLine();
             Console.Write("PASSWORD:");
             string password = Console.ReadLine();
-            regex.RegexFirstNameChecker(firstName);
-            regex.RegexLastNameChecker(lastName);
-            regex.RegexEmail(email);
-            regex.RegexMobileNumber(mobileNumber);
-            regex.RegexPassword(password);
+            regex.RegexFirstNameChecker();
+            regex.RegexLastNameChecker();
+            regex.RegexEmail();
+            regex.RegexMobileNumber();
+            regex.RegexPassword();
             Console.WriteLine("\nSample emails validation:\n");
             string[] sample = File.ReadAllLines(@"C:\BridgeLabz\.Net_Fellowship\Regex_UserRegistration\Regex_UserReistration\SampleMails.txt");
             for (int i = 0; i < sample.Length; i++)
