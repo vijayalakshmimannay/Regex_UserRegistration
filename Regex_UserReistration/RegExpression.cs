@@ -9,6 +9,16 @@ namespace RegexProblems
 {
     public class RegExpression
     {
+        public string input;
+        public RegExpression(string input)
+        {
+            this.input = input;
+        }
+        public RegExpression()
+        {
+
+        }
+
         const string FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$";
         const string LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
         const string EMAIL = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
