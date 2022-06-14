@@ -1,7 +1,7 @@
 ﻿using System;
 namespace RegexProblems
 {
-    class program
+    public class program
     {
         public static void Main(string[] args)
         {
@@ -19,18 +19,18 @@ namespace RegexProblems
             string mobileNumber = Console.ReadLine();
             Console.Write("PASSWORD:");
             string password = Console.ReadLine();
-            regex.RegexFirstNameChecker();
-            regex.RegexLastNameChecker();
+            regex.RegexNameChecker();
+            //regex.RegexLastNameChecker();
             regex.RegexEmail();
             regex.RegexMobileNumber();
             regex.RegexPassword();
             Console.WriteLine("\nSample emails validation:\n");
-            string[] sample = File.ReadAllLines(@"C:\BridgeLabz\.Net_Fellowship\Regex_UserRegistration\Regex_UserReistration\SampleMails.txt");
-            for (int i = 0; i < sample.Length; i++)
-            {
-                string ret = regex.RegexSampleMail(sample[i]);
-                Console.WriteLine(sample[i] + "  --  " + ret);
-            }
+           // string[] sample = File.ReadAllLines(@"C:\BridgeLabz\.Net_Fellowship\Regex_UserRegistration\Regex_UserReistration\SampleMails.txt");
+             // for (int i = 0; i < sample.Length; i++)
+           // {
+            //    string ret = regex.SampleMails(sample[i]);
+              //  Console.WriteLine(sample[i] + "  --  " + ret);
+           // }
 
         }
     }

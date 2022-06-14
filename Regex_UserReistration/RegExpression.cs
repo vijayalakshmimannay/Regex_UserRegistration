@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using Regex_UserReistration;
 
 namespace RegexProblems
 {
@@ -18,70 +19,73 @@ namespace RegexProblems
         {
 
         }
+        const string NAME = "^[A-Z]{1}[a-z]{2,}$";
 
-        const string FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$";
-        const string LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
+        //const string FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$";
+       //const string LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
         const string EMAIL = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         const string CONTACT = "^[0-9]{1,3}[ ][789][0-9]{9}$";
         const string PASSWORD = "^[a-z A-Z 0-9]{1,}[A-Z]{1,}[a-z A-Z 0-9]{1,}[!*@#$%^&+=]?[a-z A-Z 0-9]{1,}[0-9]{1,}[a-z A-Z 0-9]{1,}$";
         const string SAMPLE = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
-        public string RegexFirstNameChecker()
+
+        public string RegexNameChecker()
         {
-            if (Regex.IsMatch(input, FIRSTNAME))
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, NAME));
+            if (result(input))
             {
-                Console.WriteLine("First name is valid.");
+                Console.WriteLine("Your Name is Valid");
                 return "Valid";
             }
-            Console.WriteLine("First name is not valid.");
-            return "InValid";
-        }
-        public string RegexLastNameChecker()
-        {
-            if (Regex.IsMatch(input, LASTNAME))
+            else
             {
-                Console.WriteLine("second name is valid.");
-                return "Valid"; ;
+                Console.WriteLine("Your Name is Invalid");
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_NAME, "Invalid Name");
             }
-            Console.WriteLine("second name is not valid.");
-            return "InValid";
         }
+
+
         public string RegexEmail()
         {
-            if (Regex.IsMatch(input, EMAIL))
+            Func<string, bool> result = (input) => Regex.IsMatch(input, EMAIL);
+            if (result(input))
             {
-                Console.WriteLine("E-Mail id is valid.");
+                Console.WriteLine("Your email is Valid");
                 return "Valid";
             }
-            Console.WriteLine("E-Mail id is not valid.");
-            return "InValid";
+            else
+            {
+                Console.WriteLine("Your email is Invalid");
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_EMAIL, "Invalid Mail");
+            }
         }
         public string RegexMobileNumber()
         {
-            if (Regex.IsMatch(input, CONTACT))
+            Func<string, bool> result = (input) => Regex.IsMatch(input, CONTACT);
+            if (result(input))
             {
-                Console.WriteLine("Mobile number is valid.");
+                Console.WriteLine("Your mobileNumber is Valid");
                 return "Valid";
             }
-            Console.WriteLine("Mobile number is not valid.");
-            return "InValid";
+            else
+            {
+                Console.WriteLine("Your mobileNumber is Invalid");
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_NUMBER, "Invalid MobileNumber");
+            }
         }
         public string RegexPassword()
         {
-            if (Regex.IsMatch(input, PASSWORD))
+            Func<string, bool> result = (input) => Regex.IsMatch(input, PASSWORD);
+            if (result(input))
             {
-                Console.WriteLine("Password is valid.");
+                Console.WriteLine("Your password is Valid");
                 return "Valid";
             }
-            Console.WriteLine("Password is not valid.");
-            return "InValid";
-        }
-        public string RegexSampleMail(string sample)
-        {
-            if (Regex.IsMatch(sample, SAMPLE))
+            else
             {
-                return "Valid";
+                Console.WriteLine("Your password is Invalid");
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_PASSWORD, "Invalid password");
             }
-            return "Not Valid";
         }
+
     }
 }
